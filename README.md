@@ -48,22 +48,25 @@ A infraestrutura é provisionada usando Terraform e inclui:
 ### Aplicações
 
 #### Frontend (Next.js)
+
 - Framework: Next.js 14.1.0
 - Linguagem: TypeScript
 - Estilização: Tailwind CSS
 - Build: Docker multi-stage
 
 #### Backend (.NET Core)
+
 - Framework: ASP.NET Core
 - Documentação: Swagger/OpenAPI
 - Health Checks: Endpoint `/health`
 - Containerização: Docker
 
 #### Kafka Producer/Consumer (Node.js)
+
 - **Producer**: API REST para envio de mensagens
   - Endpoint: `POST /send`
   - Parâmetros: `topic`, `message`
-  
+
 - **Consumer**: API REST para consumo de mensagens
   - Endpoint: `GET /consume?topic=<topic_name>`
   - Group ID: `my-group`
@@ -71,6 +74,7 @@ A infraestrutura é provisionada usando Terraform e inclui:
 ### Strimzi Kafka
 
 Configuração do cluster Kafka:
+
 - **Versão**: 4.0.0
 - **Modo**: KRaft (sem Zookeeper)
 - **Listeners**: Plain (9092) e TLS (9093)
