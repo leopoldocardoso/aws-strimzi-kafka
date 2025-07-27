@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: producer
+  name: producer
+  namespace: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: producer
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: producer
+    spec:
+      containers:
+      - image: 659942169599.dkr.ecr.us-west-2.amazonaws.com/devops-na-nuvem/dev/strimzi/producer:v0.1
+        name: producer
+        resources: {}
+status: {}
